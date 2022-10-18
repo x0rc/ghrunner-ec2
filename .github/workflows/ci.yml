@@ -10,7 +10,6 @@ jobs:
         run: echo 'Hello World'
       - name: Terraform Init
         run: |
-          echo ${{ $PWD }}
           echo ${GITHUB_WORKSPACE}
           terraform init
         env:
