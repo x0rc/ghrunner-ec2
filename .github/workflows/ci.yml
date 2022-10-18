@@ -11,6 +11,8 @@ jobs:
       - name: Terraform Init
         run: |
           echo ${GITHUB_WORKSPACE}
+          ls
+          ls ${GITHUB_WORKSPACE}
           terraform init
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
