@@ -8,11 +8,16 @@ jobs:
     steps:
       - name: Hello
         run: echo 'Hello World'
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
       - name: Terraform Init
         run: |
-          echo ${GITHUB_WORKSPACE}
-          ls
-          ls ${GITHUB_WORKSPACE}
           terraform init
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
