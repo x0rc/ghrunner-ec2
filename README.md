@@ -1,1 +1,0 @@
-# ghrunner-ec2
